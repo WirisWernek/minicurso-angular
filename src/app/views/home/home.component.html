@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<main class="d-flex justify-content-center align-items-center flex-column w-100">
+  <div class="d-flex justify-content-start align-items-center">
+	<button class="btn" (click)="search()">
+		<img src="images/search.svg" width="18" alt="" srcset="" />
+	</button>
+    <input type="text" class="w-100" name="" placeholder="Pesquisar no Conteúdo do Blog" id="" [(ngModel)]="termSearch" />
+	<button class="btn" (click)="clear()" >
+		<img src="images/trash.png" width="18" alt="" srcset="" />
+	</button>
+	<button class="btn" (click)="novo()" >
+		<img src="images/plus.png" width="18" alt="" srcset="" />
+	</button>
+  </div>
+
+  @for (post of posts$ | async; track post) {
+  	<app-post class="w-100" [post]="post" (liked)="liked($event)" (edited)="edited($event)"></app-post>
+  }
+  @empty {
+	<h1>Nenhum post encontrado</h1>
+  }
+</main>

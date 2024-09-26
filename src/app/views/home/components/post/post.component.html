@@ -1,0 +1,19 @@
+<div class="d-flex post flex-column">
+  <header class="d-flex justify-content-between">
+    <span>{{ post.data }}</span>
+    <div>
+      <button class="btn" (click)="like()">
+        <img
+          [src]="post.like ? 'images/heart_like.svg' : 'images/heart.svg'"
+          width="20"
+          alt="Coração na cor laranja para indicar que o post foi curtido quando preenchido e vazio quando não curtido"
+        />
+      </button>
+      <button class="btn" (click)="editar()">
+        <img src="images/pencil.png" width="20" alt="Lápis pequeno para ir para edição" />
+      </button>
+    </div>
+  </header>
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.text }}</p>
+</div>

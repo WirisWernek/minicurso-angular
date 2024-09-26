@@ -1,0 +1,33 @@
+main {
+  padding: 40px 24px 40px 24px;
+  gap: 40px;
+}
+
+div {
+  padding: 16px 24px 16px 24px;
+  gap: 12px;
+  border-radius: 8px;
+  border: solid #252529 2px;
+  background-color: #202024;
+  width: 100%;
+}
+
+input {
+  background-color: transparent !important;
+  border: none !important;
+  color: #fff;
+  padding: 6px;
+  &:focus {
+    border: none !important;
+    outline: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  app-post {
+    max-width: 1000px !important;
+  }
+  div {
+    max-width: 1000px !important;
+  }
+}
